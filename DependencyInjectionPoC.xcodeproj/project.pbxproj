@@ -6,11 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		210755222DE5EEAB00DD4A25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2182833E2DB10DF800569C67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 218283452DB10DF800569C67;
+			remoteInfo = DependencyInjectionPoC;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2107551E2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DependencyInjectionPoCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		218283462DB10DF800569C67 /* DependencyInjectionPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependencyInjectionPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		2107551F2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DependencyInjectionPoCTests;
+			sourceTree = "<group>";
+		};
 		218283482DB10DF800569C67 /* DependencyInjectionPoC */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DependencyInjectionPoC;
@@ -19,6 +35,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2107551B2DE5EEAB00DD4A25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		218283432DB10DF800569C67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				218283482DB10DF800569C67 /* DependencyInjectionPoC */,
+				2107551F2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests */,
 				218283472DB10DF800569C67 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				218283462DB10DF800569C67 /* DependencyInjectionPoC.app */,
+				2107551E2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +73,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2107551D2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 210755242DE5EEAB00DD4A25 /* Build configuration list for PBXNativeTarget "DependencyInjectionPoCTests" */;
+			buildPhases = (
+				2107551A2DE5EEAB00DD4A25 /* Sources */,
+				2107551B2DE5EEAB00DD4A25 /* Frameworks */,
+				2107551C2DE5EEAB00DD4A25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				210755232DE5EEAB00DD4A25 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2107551F2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests */,
+			);
+			name = DependencyInjectionPoCTests;
+			packageProductDependencies = (
+			);
+			productName = DependencyInjectionPoCTests;
+			productReference = 2107551E2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		218283452DB10DF800569C67 /* DependencyInjectionPoC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 218283542DB10E0200569C67 /* Build configuration list for PBXNativeTarget "DependencyInjectionPoC" */;
@@ -80,6 +128,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					2107551D2DE5EEAB00DD4A25 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 218283452DB10DF800569C67;
+					};
 					218283452DB10DF800569C67 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -100,11 +152,19 @@
 			projectRoot = "";
 			targets = (
 				218283452DB10DF800569C67 /* DependencyInjectionPoC */,
+				2107551D2DE5EEAB00DD4A25 /* DependencyInjectionPoCTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2107551C2DE5EEAB00DD4A25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		218283442DB10DF800569C67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +175,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2107551A2DE5EEAB00DD4A25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		218283422DB10DF800569C67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +191,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		210755232DE5EEAB00DD4A25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 218283452DB10DF800569C67 /* DependencyInjectionPoC */;
+			targetProxy = 210755222DE5EEAB00DD4A25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		210755252DE5EEAB00DD4A25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z8YT8A2XZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.DependencyInjectionPoCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DependencyInjectionPoC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DependencyInjectionPoC";
+			};
+			name = Debug;
+		};
+		210755262DE5EEAB00DD4A25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z8YT8A2XZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yk.DependencyInjectionPoCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DependencyInjectionPoC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DependencyInjectionPoC";
+			};
+			name = Release;
+		};
 		218283522DB10E0200569C67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -305,6 +416,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		210755242DE5EEAB00DD4A25 /* Build configuration list for PBXNativeTarget "DependencyInjectionPoCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210755252DE5EEAB00DD4A25 /* Debug */,
+				210755262DE5EEAB00DD4A25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		218283412DB10DF800569C67 /* Build configuration list for PBXProject "DependencyInjectionPoC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
