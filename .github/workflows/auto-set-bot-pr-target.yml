@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Get PR Information
-        id: pr_info # This ID is crucial for accessing outputs in subsequent steps
+        id: pr_info
         run: |
           echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
           echo "PR_AUTHOR=${{ github.event.pull_request.user.login }}" >> $GITHUB_OUTPUT
@@ -31,17 +31,4 @@ jobs:
 
           gh pr edit "$PR_NUMBER" --base "$NEW_BASE_BRANCH" --repo "${{ github.repository }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for gh CLI authentication
-
-      - name: Log if no change needed (for clarity)
-        if: ${{ steps.pr_info.outputs.PR_AUTHOR != 'ykyivskyi-gl' || steps.pr_info.outputs.CURRENT_BASE_BRANCH == 'development' }}
-        run: |
-          PR_NUMBER="${{ steps.pr_info.outputs.PR_NUMBER }}"
-          CURRENT_BASE_BRANCH="${{ steps.pr_info.outputs.CURRENT_BASE_BRANCH }}"
-          PR_AUTHOR="${{ steps.pr_info.outputs.PR_AUTHOR }}"
-
-          if [[ "$PR_AUTHOR" != "ykyivskyi-gl" ]]; then
-            echo "PR #$PR_NUMBER was opened by '$PR_AUTHOR'. Not 'ykyivskyi-gl'. No base branch change will occur."
-          elif [[ "$CURRENT_BASE_BRANCH" == "development" ]]; then
-            echo "PR #$PR_NUMBER by 'ykyivskyi-gl' already targets 'development'. No change needed."
-          fi
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
