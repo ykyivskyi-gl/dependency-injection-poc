@@ -1,0 +1,34 @@
+name: Change target branch to development
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  check_and_set_target:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Get PR Information
+        id: pr_info
+        run: |
+          echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          echo "PR_AUTHOR=${{ github.event.pull_request.user.login }}" >> $GITHUB_OUTPUT
+          echo "CURRENT_BASE_BRANCH=${{ github.event.pull_request.base.ref }}" >> $GITHUB_OUTPUT
+
+      - name: Change Target Branch if Bot Author
+        if: ${{ steps.pr_info.outputs.PR_AUTHOR == 'ykyivskyi-gl' && steps.pr_info.outputs.CURRENT_BASE_BRANCH != 'development' }}
+        run: |
+          PR_NUMBER="${{ steps.pr_info.outputs.PR_NUMBER }}"
+          NEW_BASE_BRANCH="development"
+          CURRENT_BASE_BRANCH="${{ steps.pr_info.outputs.CURRENT_BASE_BRANCH }}"
+
+          gh pr edit "$PR_NUMBER" --base "$NEW_BASE_BRANCH" --repo "${{ github.repository }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
