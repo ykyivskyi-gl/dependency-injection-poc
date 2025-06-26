@@ -14,6 +14,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        
+      - name: Get PR Information
+        id: pr_info # This ID is crucial for accessing outputs in subsequent steps
+        run: |
+          echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          echo "PR_AUTHOR=${{ github.event.pull_request.user.login }}" >> $GITHUB_OUTPUT
+          echo "CURRENT_BASE_BRANCH=${{ github.event.pull_request.base.ref }}" >> $GITHUB_OUTPUT
 
       - name: Change Target Branch if Bot Author
         if: ${{ steps.pr_info.outputs.PR_AUTHOR == 'ykyivskyi-gl' && steps.pr_info.outputs.CURRENT_BASE_BRANCH != 'development' }}
@@ -29,9 +36,9 @@ jobs:
       - name: Log if no change needed (for clarity)
         if: ${{ steps.pr_info.outputs.PR_AUTHOR != 'ykyivskyi-gl' || steps.pr_info.outputs.CURRENT_BASE_BRANCH == 'development' }}
         run: |
-          PR_AUTHOR="${{ steps.pr_info.outputs.PR_AUTHOR }}"
-          CURRENT_BASE_BRANCH="${{ steps.pr_info.outputs.CURRENT_BASE_BRANCH }}"
           PR_NUMBER="${{ steps.pr_info.outputs.PR_NUMBER }}"
+          CURRENT_BASE_BRANCH="${{ steps.pr_info.outputs.CURRENT_BASE_BRANCH }}"
+          PR_AUTHOR="${{ steps.pr_info.outputs.PR_AUTHOR }}"
 
           if [[ "$PR_AUTHOR" != "ykyivskyi-gl" ]]; then
             echo "PR #$PR_NUMBER was opened by '$PR_AUTHOR'. Not 'ykyivskyi-gl'. No base branch change will occur."
